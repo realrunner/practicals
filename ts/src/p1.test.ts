@@ -1,12 +1,12 @@
 import { doCalculation, isPalindrome, reverseWordsInString } from "./p1";
 
 test("palindrome", () => {
-    expect(isPalindrome("abcdedcba")).toEqual("true");
-    expect(isPalindrome("Hannah")).toEqual("true");
-    expect(isPalindrome("racecar")).toEqual("true");
-    expect(isPalindrome("Able was I ere I saw Elba")).toEqual("true");
-    expect(isPalindrome("Hannahash")).toEqual("false");
-    expect(isPalindrome("Not a Palindrome")).toEqual("false");
+    expect(isPalindrome("abcdedcba")).toEqual(true);
+    expect(isPalindrome("Hannah")).toEqual(true);
+    expect(isPalindrome("racecar")).toEqual(true);
+    expect(isPalindrome("Able was I ere I saw Elba")).toEqual(true);
+    expect(isPalindrome("Hannahash")).toEqual(false);
+    expect(isPalindrome("Not a Palindrome")).toEqual(false);
 });
 
 test("reverse word in string", () => {
