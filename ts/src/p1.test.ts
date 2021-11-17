@@ -18,8 +18,8 @@ test("reverse word in string", () => {
 
 test("calculator", () => {
     expect(doCalculation("1+1")).toEqual(2);
-    expect(doCalculation("1+1+1+1")).toEqual(4);
-    expect(doCalculation("1+3-1")).toEqual(3);
-    expect(doCalculation("1-1+2")).toEqual(2);
+    expect(doCalculation("11+12+1+1")).toEqual(25);
+    expect(doCalculation("1+13-1")).toEqual(13);
+    expect(doCalculation("1.2-0.3+2")).toEqual(2.9);
     expect(doCalculation("1-1+2+3+4+5-3-5-2+2-2+3")).toEqual(7);
 });

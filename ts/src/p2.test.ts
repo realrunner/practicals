@@ -11,7 +11,7 @@ test("names of ancestors", () => {
 
 test("most common hair color", () => {
     const person = makeFamilyTree();
-    expect(mostCommonHairColorOfAncestors(person)).toEqual(HairColor.BROWN);
+    expect(mostCommonHairColorOfAncestors(person)).toEqual(HairColor.RED);
 });
 
 function makeFamilyTree(): Person {
@@ -21,10 +21,11 @@ function makeFamilyTree(): Person {
     const nextHairColor = (function*() {
         let i = 0;
         const hKeys = Object.keys(HairColor);
+        const distribution = [...hKeys, hKeys[2], hKeys[2], hKeys[1], hKeys[3]];
         while(true) {
-            yield HairColor[hKeys[i]] as HairColor;
+            yield HairColor[distribution[i]] as HairColor;
             i += 1;
-            if (i >= hKeys.length) {
+            if (i >= distribution.length) {
                 i = 0;
             }
         }
@@ -38,6 +39,7 @@ function makeFamilyTree(): Person {
                 name: `${fname} ${lname}`,
                 hairColor: nextHairColor.next().value,
             }
+            people.push(p);
         }
     }
 
