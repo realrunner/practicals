@@ -13,24 +13,7 @@ export function reverseWordsInString(s: string): string {
 }
 
 export function doCalculation(s: string): number {
-    const stack: string[] = [];
-    let operand = "";
-    
-    for (let i = 0; i < s.length; i++) {
-        const c = s.charAt(i);
-        if (c === "+" || c === "-") {
-            if (!operand) {
-                throw new Error(`invalid state: operator ${c} without a prior operand in ${s}`);
-            }
-            stack.push(operand);
-            stack.push(c);
-            operand = "";
-        } else {
-            operand += c;
-        }
-    }
-    stack.push(operand);
-
+    const stack: string[] = s.split(/([+-])/g);
     while(stack.length >= 3) {
         const left = parseFloat(stack.shift());
         const op = stack.shift();
