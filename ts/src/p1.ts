@@ -1,11 +1,15 @@
 export function isPalindrome(s: string): boolean {
-    return false;
+  s = s.toLowerCase();
+  const reversedStr = s.split("").reverse().join("");
+  return reversedStr === s;
 }
 
 export function reverseWordsInString(s: string): string {
-    return s;
+  const reverseWord = s.split(" ").reverse();
+  return reverseWord.join(" ");
 }
 
 export function doCalculation(s: string): number {
-    return 0;
+   const evalStr = eval(s)
+  return evalStr;
 }
